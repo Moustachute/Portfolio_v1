@@ -1,0 +1,145 @@
+body { 
+    padding-top: 2%;
+    margin:0;
+    padding:0;
+    background: url(img/photo_code.jpg) no-repeat center fixed;
+    background-size: cover;  
+  }
+
+.cv {
+    width: 100%;
+}
+
+.titre_page {
+    display: block;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5em;
+    margin-bottom: 50px;
+    text-shadow: #888181 1px 1px, #888181 -1px 1px, #888181 -1px -1px, #888181 1px -1px;
+}
+
+.container {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid gray;
+    border-radius: 25px;
+}
+
+.left_container {
+    width: 75%;
+    max-width: 100%;
+    padding:20px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgb(255, 255, 255);
+    opacity: 0.7;
+}
+
+.right_container {
+    width: 25%;
+    max-width: 100%;
+    padding:10px;
+    border-radius: 0px 20px 20px 0px;
+    float: left;
+background-color: rgb(22, 22, 100);
+color: white;
+opacity: 0.8;
+}
+
+@media screen and ( max-width:569px ) {
+    .right_container {
+        width: 75%;
+    }
+}
+
+ul {
+    padding:0;
+}
+
+ol {
+    padding:10px;
+}
+
+.minuscule_right_container {
+    font-size: 12px;
+}
+
+#progress_bar {
+    height: 7px;
+    background-color: rgb(20, 61, 22);
+    border: 1px solid rgb(7, 5, 5);
+}
+
+a {
+    text-decoration: none;
+   color: rgb(80, 78, 78);
+   font-style: normal;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(133, 43, 43);
+}
+
+.a_left {
+    text-decoration: none;
+   color: rgb(28, 133, 28);
+   font-style: normal;
+}
+
+.intro {
+    padding-top: 10%;
+}
+
+.reseaux {
+    font-size: 18px;
+    padding:6px;
+    padding-top: 6px;
+}
+
+nav {
+    background: linear-gradient(to bottom,rgba(41, 40, 40, 0.795),rgba(255, 0, 0, 0));
+    font-family: 'Calligraffitti', cursive;
+    }
+
+.fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+a {
+        text-decoration: none;
+        color: rgb(2, 2, 2);
+        font-style: normal;
+     }
+     
+a:hover {
+         color: rgb(131, 32, 134);
+         background-color: rgba(143, 95, 143, 0.301);
+         border-radius: 20px;
+      }
+
+.profile {
+        display: flex;
+        width: 90%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        position: relative;
+        overflow: hidden;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        border: 1px solid rgb(48, 46, 46);
+        margin: 10px;
+        margin-top: 0;
+        opacity: 1;
+        box-shadow: grey 0px 0px 5px 5px;
+    }

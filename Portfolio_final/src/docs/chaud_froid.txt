@@ -1,0 +1,87 @@
+from random import randint
+
+def niveauDifficulte():
+    tentative = 0
+    modeIsValid = 0
+    print("Tapez le mode que vous souhaitez selectionner \n".center(100))
+    print ("facile : 30 tentatives \n".center(100))
+    print ("moyen : 20 tentatives \n".center(100))
+    print ("difficile : 10 tentatives \n".center(100))
+    print ("chuck norris : 1 tentative \n".center(100))
+    print ("abandon \n".center(100))
+    while(modeIsValid == 0):
+        mode = input("")
+        if (mode == "facile"):
+            tentative = 30
+            modeIsValid = 1
+        elif (mode == "moyen"):
+            tentative = 20
+            modeIsValid = 1
+        elif (mode == "difficile"):
+            tentative = 10
+            modeIsValid = 1
+        elif (mode == "chuck norris"):
+            tentative = 1
+            modeIsValid = 1
+        elif (mode == "abandon"):
+            exit()
+        else:
+            print("Ce n'est pas un mode, veuillez entrez à nouveau ce que vous souhaitez : \n")
+    return (tentative)
+    
+
+#Tant que le mec a pas rentrer un nombre conforme on redemande
+def traitementRep():
+    numberIsValid = 0
+    while(numberIsValid == 0):
+        numberUser = input("Choisissez un nombre entre 0 et 100 : \n")
+        if (numberUser.isdigit()): 
+            numberUser = int(numberUser)
+            if(numberUser >= 0 and numberUser <= 100): 
+                print("Vous avez choisi : " + str (numberUser))
+                numberIsValid = 1
+            else:
+                print("Ce nombre n'est pas correct")
+        else:
+            print("On a dit un nombre..")
+    return numberUser
+
+
+def chaudFroid(val, dist1, dist2):
+    #je chope le nombre du mec et vérifie si c'est valide
+    laReponse = traitementRep()
+    #on vérifie la chaleur
+    if laReponse == val:
+        return (" \n Trouve ! Le nombre etait bien "+str(val))
+    elif laReponse >= (val-dist1) and laReponse <= (val+dist1):
+        return("chaud")
+    elif laReponse <= (val-dist2) or laReponse >= (val+dist2):
+        return("froid")
+    else:
+        return("tiède")
+
+def  jeu(nbEssai,dist1,dist2) :
+    #si gagné renvoie true
+    val = randint(0, 100)
+    while(nbEssai != 0):
+        nbEssai = nbEssai - 1
+        laReponse = chaudFroid(val, dist1, dist2)
+        print(laReponse.center(100))
+        if(laReponse == " \n Trouve ! Le nombre etait bien "+str(val)):
+            return True
+        print("Il vous reste "+str(nbEssai)+" tentatives !")
+    return False
+
+def main():
+    dist1, dist2 = 10, 30
+    print(" /_\ Bienvenue dans chaud ou froid! /_\ \n".center(100))
+    print("Devinez un nombre aleatoire entre 1 et 100 \n".center(100))
+    nbEssai = niveauDifficulte()
+    print("Vous avez " + str(nbEssai) + " tentatives")
+    if(jeu(nbEssai,dist1,dist2)):
+        print('Vous avez gagne')
+    else:
+        print('Vous avez perdu')
+    
+
+main()
